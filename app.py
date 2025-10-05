@@ -5,14 +5,14 @@ import pandas as pd
 loaded_model=joblib.load("model_multioutout.pkl")
 slt.title("BFRC")
 slt.write("Enter input values below:")
-feature1=slt.number_input("Water-cement ratio",min_value=0.0,value=0.0)
-feature2=slt.number_input("Fly ash kg/m³",min_value=0.0,value=0.0)
-feature3=slt.number_input("Crude aggregate kg/m³",min_value=0.0,value=0.0)
-feature4=slt.number_input("Fine aggregate kg/m³",min_value=0.0,value=0.0)
-feature5=slt.number_input("Silica ash kg/m³",min_value=0.0,value=0.0)
-feature6=slt.number_input("Fiber diameter-mm",min_value=0.0,value=0.0)
-feature7=slt.number_input("Fiber length-mm",min_value=0.0,value=0.0)
-feature8=slt.number_input("Fiber content-%",min_value=0.0,value=0.0)
+feature1=slt.number_input("Water-cement ratio",min_value=0.0,value=0.0000)
+feature2=slt.number_input("Fly ash kg/m³",min_value=0.0,value=0.0000)
+feature3=slt.number_input("Crude aggregate kg/m³",min_value=0.0,value=0.0000)
+feature4=slt.number_input("Fine aggregate kg/m³",min_value=0.0,value=0.0000)
+feature5=slt.number_input("Silica ash kg/m³",min_value=0.0,value=0.0000)
+feature6=slt.number_input("Fiber diameter-mm",min_value=0.0,value=0.0000)
+feature7=slt.number_input("Fiber length-mm",min_value=0.0,value=0.0000)
+feature8=slt.number_input("Fiber content-%",min_value=0.0,value=0.0000)
 x_input=pd.DataFrame({
     'Water-cement ratio':[feature1],
     'Fly ash kg/m³':[feature2],
@@ -31,4 +31,5 @@ if slt.button("predict"):
     slt.success(f"Compressive strength is : {y_pred[0][0]} Mpa")
 
     slt.success(f"Flexural strength is : {y_pred[0][1]} Mpa")
+
 
